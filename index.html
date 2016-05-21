@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dundas Data Visualization Test</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+  <body>
+    <header>
+      <h2>Test</h2>
+    </header>
+
+    <div>
+      <label for="inputpair">Name/Value Pair</label>
+      <section>
+        <input id="inputpair" type="text">
+      </section>
+      <aside>
+        <button type="button" onclick="addPair()">Add</button>
+      </aside>
+    </div>
+
+    <div>
+      <label for="listpairs">Name/Value Pair List</label>
+      <section>
+        <textarea id="listpairs">
+        </textarea>
+      </section>
+      <aside>
+        <ul class="listbuttons">
+          <li><button type="button" onclick="sortByName()">Sort by Name</button></li>
+          <li><button type="button" onclick="sortByValue()">Sort by Value</button></li>
+          <li><button type="button" onclick="deletePair()">Delete</button></li>
+          <li><button type="button" onclick="showXML()">Show XML</button></li>
+        </ul>
+      </aside>
+    </div>
+
+    <!-- required scripts -->
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="./js/scripts.js"></script>
+  </body>
+</html>
