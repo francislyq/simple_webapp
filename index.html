@@ -6,35 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
   </head>
+
   <body>
-    <header>
-      <h2>Test</h2>
-    </header>
 
-    <div>
-      <label for="inputpair">Name/Value Pair</label>
-      <section>
-        <input id="inputpair" type="text">
-      </section>
-      <aside>
-        <button type="button" onclick="addPair()">Add</button>
-      </aside>
-    </div>
+    <div class="testarea">
+      <header>
+        <h1 calss="testhead">Test</h1>
+      </header>
 
-    <div>
-      <label for="listpairs">Name/Value Pair List</label>
-      <section>
-        <textarea id="listpairs">
-        </textarea>
-      </section>
-      <aside>
-        <ul class="listbuttons">
-          <li><button type="button" onclick="sortByName()">Sort by Name</button></li>
-          <li><button type="button" onclick="sortByValue()">Sort by Value</button></li>
-          <li><button type="button" onclick="deletePair()">Delete</button></li>
-          <li><button type="button" onclick="showXML()">Show XML</button></li>
-        </ul>
-      </aside>
+      <div class="inputarea">
+        <span class="inputdisplayarea">
+          <label for="inputpair">Name/Value Pair</label>
+          <input id="inputpair" type="text">
+        </span>
+        <span class="inputfunctionarea">
+          <button class="addbutton" type="button" onclick="addPair()">Add</button>
+        </span>
+      </div>
+
+      <div class="listarea">
+        <span class="listdisplayarea">
+          <label for="listpairs">Name/Value Pair List</label>
+          <textarea id="listpairs" rows="20" readonly></textarea>
+        </span>
+        <span class="listfunctionarea">
+          <ul class="listbuttons">
+            <li><button class="listbutton" type="button" onclick="sortByName()">Sort by Name</button></li>
+            <li><button class="listbutton" type="button" onclick="sortByValue()">Sort by Value</button></li>
+            <li><button class="listbutton"type="button" onclick="deletePair()">Delete</button></li>
+            <li><button class="listbutton" type="button" onclick="showXML()">Show XML</button></li>
+          </ul>
+        </span>
+      </div>
     </div>
 
     <!-- required scripts -->

@@ -1,0 +1,113 @@
+/* ================================================== */
+/* RESETS && DEFAULTS */
+/* ================================================== */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+  padding: 10px;
+}
+
+body {
+  padding: 50px 40px;
+	background-color: #238EC5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	margin: 0;
+	padding: 0;
+	color: #222222;
+}
+
+label {
+  color: grey;
+}
+
+textarea{
+    font-size: 15px;
+    line-height: 15px;
+}
+
+ul {
+	padding: 0;
+	list-style: none;
+}
+
+/* ================================================== */
+/* LAYOUT STYLES */
+/* ================================================== */
+.testarea, .inputarea, .listarea {
+  padding: 20px 15px;
+  background-color: white;
+}
+
+.testhead {
+  margin: 20px 0;
+}
+
+.addbutton, .listbutton {
+  width: 100px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 3px;
+  margin: 5px 0;
+}
+
+.listfunctionarea {
+  display: block;
+}
+
+.listbuttons li {
+  display: inline;
+}
+
+#inputpair {
+  width: 100%;
+  border-radius: 3px;
+}
+
+#listpairs {
+  border-radius: 3px;
+  width: 100%;
+}
+
+/*for tablet*/
+/*@media screen and (min-width: 768px) {}*/
+
+/*for laptop*/
+@media screen and (min-width: 992px) {
+  .testarea {
+    position: fixed;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+  }
+
+  .inputdisplayarea, .listdisplayarea {
+    width: 75%;
+    display: inline-block;
+  }
+
+  .inputfunctionarea, .listfunctionarea {
+    width: 20%;
+    display: inline-block;
+    float: right;
+  }
+
+  .addbutton, .listbutton {
+    margin: 10px 30px;
+  }
+
+}
