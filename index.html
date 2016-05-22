@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
+    <!-- required scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="./js/scripts.js"></script>
   </head>
 
   <body>
@@ -20,7 +23,7 @@
           <input id="inputpair" type="text">
         </span>
         <span class="inputfunctionarea">
-          <button class="addbutton" type="button" onclick="addPair()">Add</button>
+          <button class="addbutton" type="button">Add</button>
         </span>
       </div>
 
@@ -31,17 +34,14 @@
         </span>
         <span class="listfunctionarea">
           <ul class="listbuttons">
-            <li><button class="listbutton" type="button" onclick="sortByName()">Sort by Name</button></li>
-            <li><button class="listbutton" type="button" onclick="sortByValue()">Sort by Value</button></li>
-            <li><button class="listbutton"type="button" onclick="deletePair()">Delete</button></li>
-            <li><button class="listbutton" type="button" onclick="showXML()">Show XML</button></li>
+            <li><button class="listbutton sortbyname" type="button">Sort by Name</button></li>
+            <li><button class="listbutton sortbyvalue" type="button">Sort by Value</button></li>
+            <li><button class="listbutton delete" type="button">Delete</button></li>
+            <li><button class="listbutton showxml" type="button">Show XML</button></li>
           </ul>
         </span>
       </div>
     </div>
 
-    <!-- required scripts -->
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="./js/scripts.js"></script>
   </body>
 </html>
