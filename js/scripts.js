@@ -58,11 +58,11 @@ $(document).ready(function($) {
     // append pairs into xml
     for(var key in result) {
       $(xml).find('data').append('<pair></pair>');
-      $(xml).find('pair').last().append('<name>' + key + '</name>');
-      $(xml).find('pair').last().append('<value>' + result[key] + '</value>');
+      var newPair = $(xml).find('pair').last();
+      newPair.append('<name>' + key + '</name>');
+      newPair.append('<value>' + result[key] + '</value>');
     }
-    // parse to formatted xml
-    // console.log((new XMLSerializer()).serializeToString(xml));
+    // parse to xml
     alert((new XMLSerializer()).serializeToString(xml));
   });
 });
