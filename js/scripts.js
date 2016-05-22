@@ -9,7 +9,7 @@ $(document).ready(function($) {
     var inputText = $('#inputpair').val().replace(/\s/g, '');
     // Validation
     if(isValidInput(inputText)) {
-      $('#listpairs').val($('#listpairs').val() + inputText + '\n');
+      $('#listpairs').append('<option>' + inputText + '</option>');
     } else {
       alert("Please enter a valid pair");
     }
@@ -18,30 +18,37 @@ $(document).ready(function($) {
   // Sort by Name button
   $('.sortbyname').click(function() {
     // remove textarea contents
-    $('#listpairs').val('');
+    $('#listpairs').find('option').remove();
     // sort contents by name(by default)
     for(var name in result) {
-      $('#listpairs').val($('#listpairs').val() + name + '=' + result[name] + '\n');
+      $('#listpairs').append('<option>' + name + '=' + result[name] + '</option>');
     }
   });
 
   // Sort by Value button
   $('.sortbyvalue').click(function() {
     // remove textarea contents
-    $('#listpairs').val('');
+    $('#listpairs').find('option').remove();
     // sort contents by value
     var sortedResult = sortObjectByValue(result);
     for(var r in sortedResult){
-      $('#listpairs').val($('#listpairs').val() + sortedResult[r].key + '=' + sortedResult[r].value + '\n');
+      $('#listpairs').append('<option>' + sortedResult[r].key + '=' + sortedResult[r].value + '</option >');
     }
   });
 
   // Delete button
   $('.delete').click(function() {
+    // remove selected items from object
+    var selectedKeys = [];
+    $("#listpairs option:selected").each(function() {
+      selectedKeys.push($(this).val().split('=')[0]);
+    });
+    $.each(selectedKeys, function(index, value) {
+      delete result[value];
+    });
     // remove contents
-    $('#listpairs').val('');
-    // clear object
-    result = {};
+    $('option:selected', '#listpairs').remove();
+    //console.log(result);
   });
 
   // Show XML button

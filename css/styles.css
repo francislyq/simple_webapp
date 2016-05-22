@@ -77,6 +77,7 @@ ul {
 }
 
 #listpairs {
+  height: 320px;
   border-radius: 3px;
   width: 100%;
 }
