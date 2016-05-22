@@ -11,7 +11,7 @@ $(document).ready(function($) {
     if(isValidInput(inputText)) {
       $('#listpairs').append('<option>' + inputText + '</option>');
     } else {
-      alert("Please enter a valid pair");
+      alert('Please enter a valid pair');
     }
   });
 
@@ -31,7 +31,7 @@ $(document).ready(function($) {
     $('#listpairs').find('option').remove();
     // sort contents by value
     var sortedResult = sortObjectByValue(result);
-    for(var r in sortedResult){
+    for(var r in sortedResult) {
       $('#listpairs').append('<option>' + sortedResult[r].key + '=' + sortedResult[r].value + '</option >');
     }
   });
@@ -40,7 +40,7 @@ $(document).ready(function($) {
   $('.delete').click(function() {
     // remove selected items from object
     var selectedKeys = [];
-    $("#listpairs option:selected").each(function() {
+    $('#listpairs option:selected').each(function() {
       selectedKeys.push($(this).val().split('=')[0]);
     });
     $.each(selectedKeys, function(index, value) {
@@ -53,7 +53,17 @@ $(document).ready(function($) {
 
   // Show XML button
   $('.showxml').click(function() {
-    //TODO
+    // create a xml document
+    var xml = $.parseXML('<?xml version="1.0" encoding="utf-8" ?><data />');
+    // append pairs into xml
+    for(var key in result) {
+      $(xml).find('data').append('<pair></pair>');
+      $(xml).find('pair').last().append('<name>' + key + '</name>');
+      $(xml).find('pair').last().append('<value>' + result[key] + '</value>');
+    }
+    // parse to formatted xml
+    // console.log((new XMLSerializer()).serializeToString(xml));
+    alert((new XMLSerializer()).serializeToString(xml));
   });
 });
 
